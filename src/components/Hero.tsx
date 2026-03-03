@@ -14,12 +14,21 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
-      <div
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: "url('/hero.png')",
-  }}
-/>
+      {/* <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hero.png')",
+        }}
+      /> */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute -inset-16 w-full h-auto object-cover"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
       {/* Black Gradient Overlay (Top → Down) */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
       {/* Optional Glow Effect */}

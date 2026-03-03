@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Copy } from "lucide-react";
 import { toast } from "sonner";
-import hero_image from "@/assets/hero.png";
+import hero_image from "@/public/hero.png";
 
 const Hero = () => {
   const copyIP = () => {

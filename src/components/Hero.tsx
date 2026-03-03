@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Copy } from "lucide-react";
 import { toast } from "sonner";
-import hero_image from "@/public/hero.png";
 
 const Hero = () => {
   const copyIP = () => {
@@ -16,11 +15,11 @@ const Hero = () => {
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${hero_image})`,
-        }}
-      />
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/hero.png')",
+  }}
+/>
       {/* Black Gradient Overlay (Top → Down) */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
       {/* Optional Glow Effect */}

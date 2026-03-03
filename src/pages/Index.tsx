@@ -11,9 +11,9 @@ const Index = () => (
   <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
     <Navbar />
     <Hero />
-    <About />
-    <Versions />
+    <About />    
     <Features />
+    <Versions />
     <Guide />
     <CTA />
     <Footer />

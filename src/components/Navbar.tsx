@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 
 const navItems = [
   { label: "Trang chủ", href: "#hero" },
@@ -12,20 +13,25 @@ const navItems = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const copyIP = () => {
+    navigator.clipboard.writeText("mineplow.vn");
+    toast.success("Đã copy IP: mineplow.vn");
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/60 border-b border-white/5 shadow-[0_0_20px_rgba(34,197,94,0.15)]">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        
+        {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-[110px]">
-            <img
-              src="/favicon.ico"
-              alt="Mineplow Logo"
-              className="w-full drop-shadow-[0_0_10px_rgba(0,255,150,0.8)] hover:scale-110 transition-all duration-300"
-            />
-          </div>
+          <img
+            src="/favicon.ico"
+            alt="Mineplow Logo"
+            className="w-12 drop-shadow-[0_0_15px_rgba(34,197,94,0.7)] hover:scale-110 transition duration-300"
+          />
           <a
             href="#hero"
-            className="text-2xl font-extrabold tracking-[0.3em] text-primary text-glow"
+            className="text-xl font-extrabold tracking-[0.3em] text-primary"
           >
             MINEPLOW
           </a>
@@ -37,24 +43,24 @@ const Navbar = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="relative text-sm font-medium text-gray-300 hover:text-primary transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </a>
           ))}
-          <a
-            href="#cta"
-            className="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-primary-foreground hover:scale-105 transition-transform duration-300 box-glow"
+
+          <button
+            onClick={copyIP}
+            className="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-black hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] transition-all duration-300"
           >
             Chơi ngay
-          </a>
+          </button>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-white"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -67,33 +73,19 @@ const Navbar = () => {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 h-screen w-64 glass border-l border-border z-50 flex flex-col pt-20 px-6 gap-6 md:hidden"
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 right-0 h-screen w-72 backdrop-blur-xl bg-black/90 border-l border-white/5 flex flex-col pt-20 px-6 gap-6 md:hidden"
           >
-            <button
-              className="absolute top-5 right-5 text-foreground"
-              onClick={() => setOpen(false)}
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-lg text-gray-300 hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
             ))}
-            <a
-              href="#cta"
-              onClick={() => setOpen(false)}
-              className="rounded-lg bg-primary px-5 py-3 text-center font-bold text-primary-foreground box-glow"
-            >
-              Chơi ngay
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

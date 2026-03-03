@@ -42,9 +42,9 @@ const Guide = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl bg-card neon-border p-8"
+          className="rounded-2xl bg-card neon-border p-8 hover:cursor-pointer"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-6 hover:cursor-pointer">
             <Monitor size={28} className="text-primary" />
             <h3 className="text-xl font-bold text-foreground">PC (Java Edition)</h3>
           </div>
@@ -66,9 +66,9 @@ const Guide = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl bg-card neon-border p-8"
+          className="rounded-2xl bg-card neon-border p-8 hover:cursor-pointer"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-6 ">
             <Smartphone size={28} className="text-primary" />
             <h3 className="text-xl font-bold text-foreground">Điện thoại (Bedrock)</h3>
           </div>

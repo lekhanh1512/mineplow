@@ -30,7 +30,7 @@ const Features = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group rounded-2xl bg-card neon-border p-6 hover:box-glow hover:-translate-y-1 transition-all duration-300"
+            className="group rounded-2xl bg-card neon-border p-6 hover:box-glow hover:-translate-y-1 transition-all duration-300 hover:cursor-pointer"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <f.icon size={24} className="text-primary" />

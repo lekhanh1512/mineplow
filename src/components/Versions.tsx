@@ -36,7 +36,7 @@ const Versions = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
-            className="group rounded-2xl bg-card neon-border p-8 text-center hover:-translate-y-2 hover:box-glow-lg transition-all duration-300"
+            className="group rounded-2xl bg-card neon-border p-8 text-center hover:-translate-y-2 hover:box-glow-lg transition-all duration-300 hover:cursor-pointer"
           >
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <v.icon size={32} className="text-primary" />
